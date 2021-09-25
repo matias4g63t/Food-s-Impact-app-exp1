@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar color="colorfondo" >
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/"
+        text="Back"
+        color="primary"
+        ></ion-back-button>
+    </ion-buttons>
+
+    <div class="ion-center-text">
+      <ion-title class="titulo_header" >Formulario</ion-title>
+    </div>
+
+    <ion-buttons  slot="end">
+      <ion-avatar>
+        <ion-img src="/assets/icon/icono_tierra.png"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="ion-text-center">
+    <h3 class="titulo">Completa los datos</h3>
+  </div>
+
+  <ion-card>
+    <ion-card-header color="titulo_card" >
+      <ion-card-title class="ion-text-center"> Unete nuestra comunidad</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-item>
+    <ion-label position="floating" >Nombres:</ion-label>
+    <ion-input clearInput ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Apellidos:</ion-label>
+    <ion-input clearInput></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Edad:</ion-label>
+    <ion-input clearInput></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Género</ion-label>
+    <ion-select placeholder="Select One">
+      <ion-select-option value="f">Mujer</ion-select-option>
+      <ion-select-option value="m">Hombre</ion-select-option>
+      <ion-select-option value="o">Otro</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+      <ion-item>
+        <ion-label>Email: </ion-label>
+        <ion-input clearInput type="email" placeholder="Email"
+                  name="email" [(ngModel)]= "usuario.email"
+                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                  required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Password: </ion-label>
+        <ion-input clearInput type="password" placeholder="Contraseña"
+                   name="password" [(ngModel)]= "usuario.password"
+                   required>
+        </ion-input>
+      </ion-item>
+      <br><br><br>
+      <ion-button [disabled] ="formulario.invalid"
+        type="submit" expand="block" routerLink="/inicio">
+      Registrarme
+    </ion-button>
+  </form>
+</ion-content>

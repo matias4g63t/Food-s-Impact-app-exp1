@@ -1,0 +1,68 @@
+<ion-header  >
+  <ion-toolbar color="colorfondo" >
+
+    <div class="titulo_header">
+      <ion-title class="ion-text-center">INICIO</ion-title>
+    </div>
+    
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content>
+
+    <div class="ion-text-center">
+      <h1 class="titulo">Food´s Impact</h1>
+    </div>
+
+    <ion-slides [options]="option" class="ion-margin-top" >
+
+      <ion-slide>
+        <ion-card class="ion-card" >
+          <img src="assets/img/1.jpg">
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="ion-card">
+          <img src="assets/img/2.jpg">
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="ion-card">
+          <img src="assets/img/3.jpg">
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="ion-card">
+          <img src="assets/img/4.jpg">
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>¡Informate y actua!</ion-card-subtitle>
+        <ion-card-title class="titulo_card" > Cambiar nuestros abitos es clave  </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Descubre el impacto medioambiental que producen las diferentes industrias de alimentos para que puedas tomar accion y aportar al cuidado de nuestro medio ambiente
+      </ion-card-content>
+    </ion-card>
+
+    <br>
+
+    <ion-list class="ion-padding">
+      <ion-item *ngFor="let c of componentes"
+        [routerLink] = "c.redirecTo"
+        detail="true">
+        <ion-icon [name]="c.icon"
+        slot="start"
+        color="primary"></ion-icon>
+        {{c.name}}
+      </ion-item>
+    </ion-list>
+    <br>
+  </ion-content>

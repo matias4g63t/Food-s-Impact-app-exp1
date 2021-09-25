@@ -1,0 +1,46 @@
+ion-toolbar{
+    background-color: var(--ion-color-colorfondo);
+}
+
+.titulo{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    color: rgb(50, 129, 129);
+    font-size: 42px;
+}
+
+.titulo_header{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    color: rgb(50, 129, 129);
+    font-size: 40px;
+}
+
+.titulo_card{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    color: rgb(90, 153, 153);
+    font-size: 30px;
+}
+
+.ion-card {
+    width: 100%;
+    height: 160px;
+    box-shadow: none;
+    border-radius: 12px;
+
+    img{
+        object-fit: cover;
+        width: 100%;
+        transform: scale (1.1, 1.1) rotate (1deg);
+        transition: 600ms all ease-in-out;
+    }
+}
+
+.swiper-slide-active{
+    transform: scale(1.05,1.05);
+}
+
+.swiper-slide{
+    transition: 400ms all ease-in-out;
+}
